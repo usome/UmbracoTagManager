@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web.Http;
 using NPoco;
@@ -172,7 +173,7 @@ namespace Umbraco_Tag_Manager.Controllers
                                     DocumentId = result.DocumentId,
                                     DocumentName = n.Name,
                                     DocumentUrl =
-                                        $"/{Constants.AppSettings.Path}/#/content/content/edit/{result.DocumentId.ToString()}"
+                                        $"#/content/content/edit/{result.DocumentId.ToString()}"
                                 };
                                 docs.Add(document);
                             }
@@ -213,7 +214,7 @@ namespace Umbraco_Tag_Manager.Controllers
                                     DocumentId = result.DocumentId,
                                     DocumentName = n.Name,
                                     DocumentUrl =
-                                        $"/{Constants.AppSettings.Path}/#/media/media/edit/{result.DocumentId.ToString()}"
+                                        $"#/media/media/edit/{result.DocumentId.ToString()}"
                                 };
                                 medias.Add(media);
                             }
