@@ -7,7 +7,7 @@
     }
   ],
 	javascript: [
-	    '~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.controller.js?v=1',
-	    '~/App_Plugins/TagManager/TagManager.resource.js'
+	    "~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.controller.js?v=1",
+	    "~/App_Plugins/TagManager/TagManager.resource.js"
 	]
 }
