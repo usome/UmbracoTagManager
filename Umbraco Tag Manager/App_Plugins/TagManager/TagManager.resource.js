@@ -20,6 +20,9 @@ angular.module("umbraco.resources").factory("TagManagerResource", function ($htt
         },
         deleteTag: function (cmsTags) {
             return $http.post("backoffice/TagManager/TagManagerAPI/DeleteTag", angular.toJson(cmsTags));
+        },
+         createTag: function (cmsTags) {
+            return $http.post("backoffice/TagManager/TagManagerAPI/CreateTag", angular.toJson(cmsTags));
         }
     };
 });

@@ -6,8 +6,11 @@
       "sections": [ "TagManager" ]
     }
   ],
-	javascript: [
-	    "~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.controller.js?v=1",
-	    "~/App_Plugins/TagManager/TagManager.resource.js"
-	]
+  javascript: [
+    "~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.controller.js",
+    "~/App_Plugins/TagManager/TagManager.resource.js"
+  ],
+  "css": [
+    "~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.css"
+  ]
 }

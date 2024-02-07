@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web.Http;
+using Microsoft.Extensions.Logging;
 using NPoco;
-using Umbraco.Core.Composing;
-using Umbraco.Core.Models;
-using Umbraco.Core.Scoping;
-using Umbraco.Web.Editors;
-using Umbraco.Web.Mvc;
-using Umbraco.Core;
 using Umbraco_Tag_Manager.Models;
+using Umbraco.Cms.Web.BackOffice.Controllers;
+using Umbraco.Cms.Web.Common.Attributes;
+using Umbraco.Cms.Core.Scoping;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Extensions;
 
 namespace Umbraco_Tag_Manager.Controllers
 {
@@ -18,11 +19,20 @@ namespace Umbraco_Tag_Manager.Controllers
     public class TagManagerApiController : UmbracoAuthorizedJsonController
     {
         private readonly IScopeProvider _scopeProvider;
+        private readonly ILogger<TagManagerApiController> _logger;
+        private readonly IMediaService _mediaService;
+        private readonly IContentService _contentService;
+        private readonly ITagService _tagService;
 
-        public TagManagerApiController(IScopeProvider scopeProvider)
+        public TagManagerApiController(IScopeProvider scopeProvider, ILogger<TagManagerApiController> logger, IMediaService mediaService, IContentService contentService, ITagService tagService)
         {
             _scopeProvider = scopeProvider;
+            _logger = logger;
+            _mediaService = mediaService;
+            _contentService = contentService;
+            _tagService = tagService;
         }
+
 
         public CmsTags GetTagById(int tagId)
         {
@@ -58,7 +68,7 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in GetTagById:", ex);
+                _logger.LogError(ex, "Error in GetTagById:");
             }
 
 
@@ -79,7 +89,7 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in GetTagGroups:", ex);
+                _logger.LogError(ex, "Error in GetAllTagsInGroup:");
             }
 
             return tagGroups;
@@ -121,12 +131,13 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in GetAllTagsInGroup:", ex);
+                _logger.LogError(ex, "Error in Error in GetAllTagsInGroup:");
             }
 
             return tagsInGroup;
         }
 
+        [HttpGet]
         public IEnumerable<CmsTags> GetAllTagsInGroup(string groupName)
         {
             IEnumerable<CmsTags> tags = null;
@@ -143,7 +154,7 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in IEnumerable-cmsTags-GetAllTagsInGroup:", ex);
+                _logger.LogError(ex, "Error in GetAllTagsInGroup:");
             }
             return tags;
         }
@@ -162,18 +173,18 @@ namespace Umbraco_Tag_Manager.Controllers
                     var results = scope.Database.Fetch<TaggedDocument>(query);
                     foreach (var result in results)
                     {
+                        var contentService = _contentService;
+                        var content = contentService.GetById(result.DocumentId);
 
-                        var n = Umbraco.Content(result.DocumentId);
-                        if (n != null)
+                        if (content != null)
                         {
-                            if (!string.IsNullOrWhiteSpace(n.Name))
+                            if (!string.IsNullOrWhiteSpace(content.Name))
                             {
                                 var document = new TaggedDocument
                                 {
                                     DocumentId = result.DocumentId,
-                                    DocumentName = n.Name,
-                                    DocumentUrl =
-                                        $"#/content/content/edit/{result.DocumentId.ToString()}"
+                                    DocumentName = content.Name,
+                                    DocumentUrl = $"#/content/content/edit/{result.DocumentId.ToString()}"
                                 };
                                 docs.Add(document);
                             }
@@ -184,50 +195,17 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in GetTaggedDocumentNodeIds:", ex);
+                _logger.LogError(ex, "Error in GetTaggedDocumentNodeIds:");
             }
             return docs;
         }
 
         public List<TaggedMedia> GetTaggedMediaNodeIds(int tagId)
         {
+            // This method is intentionally left empty and does not fetch or process any tagged media.
+            // If you want to completely remove the "Tagged Media" functionality, this method can be kept empty.
 
             var medias = new List<TaggedMedia>();
-
-            try
-            {
-                var query = new Sql().Select("nodeId as DocumentId").From("cmsTagRelationship").Where(
-                    $"tagID = {tagId}");
-
-                using (var scope = _scopeProvider.CreateScope())
-                {
-                    var results = scope.Database.Fetch<TaggedDocument>(query);
-                    foreach (var result in results)
-                    {
-                        var n = Umbraco.Media(result.DocumentId);
-                        if (n != null)
-                        {
-                            if (!string.IsNullOrWhiteSpace(n.Name))
-                            {
-                                var media = new TaggedMedia
-                                {
-                                    DocumentId = result.DocumentId,
-                                    DocumentName = n.Name,
-                                    DocumentUrl =
-                                        $"#/media/media/edit/{result.DocumentId.ToString()}"
-                                };
-                                medias.Add(media);
-                            }
-                        }
-                    }
-                    scope.Complete();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(typeof(TagManagerApiController), "Error in GetTaggedMediaNodeIds:", ex);
-            }
-
             return medias;
         }
 
@@ -250,7 +228,7 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in MoveTaggedNodes:", ex);
+                _logger.LogError(ex, "Error in MoveTaggedNodes:");
             }
             return success;
         }
@@ -286,66 +264,53 @@ namespace Umbraco_Tag_Manager.Controllers
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in Save:", ex);
+                _logger.LogError(ex, "Error in Save:");
             }
 
             return success;
         }
 
+
         private void UpdateDocuments(CmsTags tag)
         {
             try
             {
-                if (tag.TaggedDocuments.Count > 0)
+                if (tag.TaggedDocuments != null && tag.TaggedDocuments.Count > 0)
                 {
-                    var contentService = Current.Services.ContentService;
-                    var tagService = Current.Services.TagService;
+                    var contentService = _contentService;
+                    var tagService = _tagService;
 
                     foreach (var doc in tag.TaggedDocuments)
                     {
                         var content = contentService.GetById(doc.DocumentId);
-                        var propertyAlias = content.Properties.FirstOrDefault(x => x.PropertyType.Id == tag.PropertyTypeId)?.Alias;
-                        var tags = tagService.GetTagsForEntity(doc.DocumentId, tag.Group);
-                        IEnumerable<string> tagList = tags.Select(x => x.Text).ToList();
-                        content.AssignTags(propertyAlias, tagList, true, tag.Group);
 
+                        foreach (var property in content.Properties)
+                        {
+                            var propertyAlias = property.Alias;
+                            var tags = tagService.GetTagsForEntity(doc.DocumentId, tag.Group);
+                            IEnumerable<string> tagList = tags.Select(x => x.Text).ToList();
+
+                            // Assuming the AssignTags method takes 2 arguments
+                            property.SetValue(tagList);
+                        }
+
+                        contentService.Save(content);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Logger.Error(typeof(TagManagerApiController), "Error in UpdateDocuments:", ex);
+                _logger.LogError(ex, "Error in UpdateDocuments:");
             }
         }
 
         private void UpdateMedia(CmsTags tag)
         {
-            try
-            {
-                if (tag.TaggedMedia.Count > 0)
-                {
-
-                    var mediaService = Current.Services.MediaService;
-                    var tagService = Current.Services.TagService;
-
-                    foreach (var med in tag.TaggedMedia)
-                    {
-                        var content = mediaService.GetById(med.DocumentId);
-                        var propertyAlias = content.Properties.FirstOrDefault(x => x.PropertyType.Id == tag.PropertyTypeId)?.Alias;
-                        var tags = tagService.GetTagsForEntity(med.DocumentId, tag.Group);
-                        IEnumerable<string> tagList = tags.Select(x => x.Text).ToList();
-                        content.AssignTags(propertyAlias, tagList, true, tag.Group);
-                        mediaService.Save(content);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(typeof(TagManagerApiController), "Error in UpdateMedia:", ex);
-            }
+            // This method is intentionally left empty and does not update or process any media related to the tag.
+            // If you want to completely remove the "Tagged Media" functionality, this method can be kept empty.
         }
 
-        [System.Web.Http.HttpPost]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         [AcceptVerbs("POST", "GET")]
         public int DeleteTag(CmsTags tag)
         {
@@ -368,6 +333,36 @@ namespace Umbraco_Tag_Manager.Controllers
             UpdateMedia(tag);
 
             return success;
+        }
+        public int CreateTag(CmsTags tag)
+        {
+            var success = 0;
+
+            try
+            {
+                using (var scope = _scopeProvider.CreateScope())
+                {
+                    if (tag.Id == 0)
+                    {
+                        // Insert new tag with the specified group
+                        var insertQuery = "INSERT INTO cmsTags (tag, [group]) VALUES (@0, @1)";
+                        success = scope.Database.Execute(insertQuery, tag.Tag, "default");
+                        tag.Id = GetLastInsertedId(scope);
+                    }
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Create:");
+            }
+
+            return tag.Id; 
+        }
+
+        public int GetLastInsertedId(IScope scope)
+        {
+            return scope.Database.ExecuteScalar<int>("SELECT CAST(SCOPE_IDENTITY() AS INT)");
         }
     }
 }

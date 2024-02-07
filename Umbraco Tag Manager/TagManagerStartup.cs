@@ -1,19 +1,19 @@
-﻿using Umbraco.Core.Composing;
-using Umbraco.Core.Logging;
-using Umbraco.Core.Migrations;
-using Umbraco.Core.Migrations.Upgrade;
-using Umbraco.Core.Scoping;
-using Umbraco.Core.Services;
-using Umbraco.Web;
-using Umbraco.Web.Routing;
+﻿using Umbraco.Cms.Core;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Core.Scoping;
+using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Infrastructure.Migrations;
+using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 
 namespace Umbraco_Tag_Manager
 {
-    public class TagManagerComposer : IUserComposer
+    public class TagManagerComposer : IComposer
     {
-        public void Compose(Composition composition)
+        public void Compose(IUmbracoBuilder builder)
         {
-            composition.Sections().Append<TagManagerSection>();
+            builder.Sections().Append<TagManagerSection>();
         }
     }
 
@@ -24,31 +24,36 @@ namespace Umbraco_Tag_Manager
 
     public class TagManagerStartup : IComponent
     {
-		private readonly IScopeProvider _scopeProvider;
-        private readonly ILogger _logger;
-        private readonly IMigrationBuilder _migrationBuilder;
+        private readonly ICoreScopeProvider _coreScopeProvider;
+        private readonly IMigrationPlanExecutor _migrationPlanExecutor;
         private readonly IKeyValueService _keyValueService;
+        private readonly IRuntimeState _runtimeState;
 
-        public TagManagerStartup(IScopeProvider scopeProvider, ILogger logger, IMigrationBuilder migrationBuilder,
-            IKeyValueService keyValueService)
+    public TagManagerStartup(ICoreScopeProvider coreScopeProvider, IMigrationPlanExecutor migrationPlanExecutor, IKeyValueService keyValueService, IRuntimeState runtimeState)
         {
-            _scopeProvider = scopeProvider;
-            _logger = logger;
-            _migrationBuilder = migrationBuilder;
+            _coreScopeProvider = coreScopeProvider;
+            _migrationPlanExecutor = migrationPlanExecutor;
             _keyValueService = keyValueService;
+            _runtimeState = runtimeState;
         }
 
         public void Initialize()
         {
+            if (_runtimeState.Level < RuntimeLevel.Run)
+            {
+                return;
+            }
+
             var migrationPlan = new MigrationPlan("UsomeTagManagerMigrationv1");
             migrationPlan.From(string.Empty).To<InstallHelper>("UsomeTagManagerMigrationv1-db");
-            var upGrader = new Upgrader(migrationPlan);
-            upGrader.Execute(_scopeProvider, _migrationBuilder, _keyValueService, _logger);
+            var upgrader = new Upgrader(migrationPlan);
+            upgrader.Execute(_migrationPlanExecutor, _coreScopeProvider, _keyValueService);
+
         }
 
         public void Terminate()
         {
 
         }
-	}
+    }
 }

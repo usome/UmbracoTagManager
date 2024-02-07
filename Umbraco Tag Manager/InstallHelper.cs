@@ -1,8 +1,9 @@
-﻿using Umbraco.Core.Migrations;
+﻿using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Infrastructure.Migrations;
 
 namespace Umbraco_Tag_Manager
 {
-    public class InstallHelper: MigrationBase
+    public class InstallHelper : MigrationBase
     {
         private readonly string[] _userGroups = { "admin", "editor", "writer" };
 
@@ -10,7 +11,8 @@ namespace Umbraco_Tag_Manager
         {
         }
 
-        public override void Migrate()
+        // Use 'protected' here to match the base class
+        protected override void Migrate()
         {
             var dbContext = Context.Database;
             if (TableExists("umbracoUserGroup2App"))
