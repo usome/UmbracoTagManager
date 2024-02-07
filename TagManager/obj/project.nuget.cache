@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6uf+sYHH4mzcl+uUSJwsTUIcuv+DFggvxSmYxYVpKr0YX0DWrr1ygC3IwHrqkQPyoCVa63F9ToELxIrglJymg==",
+  "dgSpecHash": "jkpyPPvdbNi8spS2fw8NU+O3TL5MLYM6hihAtrS0XlZrtwSCPa+W7yli+TYvRdC8TEu/pbcOXrNSvp6yrmMdog==",
   "success": true,
   "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
   "expectedPackageFiles": [
@@ -222,10 +222,7 @@
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.cms.web.backoffice\\12.3.0\\umbraco.cms.web.backoffice.12.3.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.cms.web.common\\12.3.0\\umbraco.cms.web.common.12.3.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.cms.web.website\\12.3.0\\umbraco.cms.web.website.12.3.0.nupkg.sha512",
-    "C:\\Users\\bisha\\.nuget\\packages\\umbraco.csharptest.net.collections\\15.0.0\\umbraco.csharptest.net.collections.15.0.0.nupkg.sha512",
-    "C:\\Users\\bisha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\bisha\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\bisha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
+    "C:\\Users\\bisha\\.nuget\\packages\\umbraco.csharptest.net.collections\\15.0.0\\umbraco.csharptest.net.collections.15.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -302,7 +302,6 @@ C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\o
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.AssemblyInfoInputs.cache
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.AssemblyInfo.cs
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.csproj.CoreCompileInputs.cache
-C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.sourcelink.json
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.dll
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\refint\TagManager.dll
 C:\Users\bisha\OneDrive\Desktop\Github\tagmanager\UmbracoTagManager\TagManager\obj\Debug\net7.0\TagManager.pdb
