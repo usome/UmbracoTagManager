@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SulMmrAjFosQiAvr02R9+qlUpGohf2LaEKsUVgrBHCYUnwdjGT9TPFQfcw8Ra90ClDwBCkgS0XDpJwTy7khyhA==",
+  "dgSpecHash": "Z6uf+sYHH4mzcl+uUSJwsTUIcuv+DFggvxSmYxYVpKr0YX0DWrr1ygC3IwHrqkQPyoCVa63F9ToELxIrglJymg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
+  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.abstractions\\7.0.0\\asp.versioning.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.http\\7.0.0\\asp.versioning.http.7.0.0.nupkg.sha512",
@@ -223,8 +223,8 @@
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.cms.web.common\\12.3.0\\umbraco.cms.web.common.12.3.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.cms.web.website\\12.3.0\\umbraco.cms.web.website.12.3.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\umbraco.csharptest.net.collections\\15.0.0\\umbraco.csharptest.net.collections.15.0.0.nupkg.sha512",
-    "C:\\Users\\bisha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\bisha\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
   ],
   "logs": []

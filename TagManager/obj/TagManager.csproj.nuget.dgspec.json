@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj": {}
+    "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj": {
+    "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj": {
       "version": "1.0.2",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
+        "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
         "projectName": "TagManager",
-        "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
+        "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
         "packagesPath": "C:\\Users\\bisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\obj\\",
+        "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
