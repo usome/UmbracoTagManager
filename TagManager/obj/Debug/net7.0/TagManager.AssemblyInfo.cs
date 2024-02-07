@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute("\r\n\t\t\tThis package has been developed to provide a standard \"Umbraco\" interface to" +
     " manage tags within your site.\r\n\r\n\t\t")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+9464180db048aaa7ac6ccfa76372a0ff2082f9ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+7c1dee42068f515f82f97710ee70b844b994518f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TagManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TagManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]

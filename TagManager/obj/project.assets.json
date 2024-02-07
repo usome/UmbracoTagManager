@@ -11147,7 +11147,6 @@
       "path": "umbraco.csharptest.net.collections/15.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "content/README.htm",
         "contentFiles/any/net6.0/README.htm",
         "contentFiles/any/net7.0/README.htm",
