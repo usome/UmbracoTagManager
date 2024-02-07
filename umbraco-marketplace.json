@@ -1,0 +1,48 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AddOnPackagesRequiredForUmbracoCloud": [],
+  "AuthorDetails": {
+    "Name": "Usome",
+    "Url": "https://our.umbraco.com/members/id:277065/",
+    "ImageUrl": "https://our.umbraco.com/media/upload/85801177-aac8-4be4-a710-a843f340959c/twitter_logo.jpg?width=125&height=125&mode=crop&upscale=true",
+    "Contributors": [
+      {
+        "Name": "Pasang Tamang",
+        "Url": "https://our.umbraco.com/members/id:17025/"
+      },
+      {
+        "Name": "Bishal Tim",
+        "Url": "https://our.umbraco.com/members/id:339532/"
+      }
+    ],
+    "SyncContributorsFromRepository": false
+  },
+  "Category": "Editor Tools",
+  "IsSubPackageOf": "",
+  "PackageType": "Package",
+  "PackagesByAuthor": [],
+  "RelatedPackages": [],
+  "LicenseTypes": [ "Free" ],
+  "Tags": [ "umbraco", "plugin", "package", "umbraco-marketplace" ],
+  "Title": "Tag Manager",
+  "VersionSpecificPackageIds": [
+    {
+      "UmbracoMajorVersion": 12,
+      "PackageId": "TagManager.Umbraco12.3.0"
+    }
+  ],
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20001957.png",
+      "Caption": "Dashboard"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20002044.png",
+      "Caption": "Overview"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20002225.png",
+      "Caption": "Detailed View"
+    }
+  ]
+}
