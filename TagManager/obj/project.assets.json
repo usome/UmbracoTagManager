@@ -11147,6 +11147,7 @@
       "path": "umbraco.csharptest.net.collections/15.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "content/README.htm",
         "contentFiles/any/net6.0/README.htm",
         "contentFiles/any/net7.0/README.htm",
@@ -11170,19 +11171,21 @@
   "project": {
     "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
+      "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
       "projectName": "TagManager",
-      "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
+      "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
       "packagesPath": "C:\\Users\\bisha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\obj\\",
+      "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bisha\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://www.myget.org/F/umbracoprereleases/api/v3/index.json": {}
       },
@@ -11231,7 +11234,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>TagManager</id>
+    <version>1.0.1</version>
+    <title>TagManager</title>
+    <authors>Usome</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>readme.md</readme>
+    <description>This package has been developed to provide a standard "Umbraco" interface to manage tags within your site.</description>
+    <tags>umbraco plugin package,umbraco-marketplace</tags>
+    <repository type="git" url="https://github.com/usome/UmbracoTagManager" commit="c0c303653f0cd4648a9bf6548d0a5edaecae056d" />
+    <dependencies>
+      <group targetFramework="net7.0">
+        <dependency id="Umbraco.Cms.Web.BackOffice" version="12.3.0" exclude="Build,Analyzers" />
+        <dependency id="Umbraco.Cms.Web.Website" version="12.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\bin\Release\net7.0\TagManager.dll" target="lib\net7.0\TagManager.dll" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\create.html" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\create.html" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\delete.html" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\delete.html" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\edit.html" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\edit.html" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\overview.html" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\overview.html" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\TagManager.controller.js" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\TagManager.controller.js" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\backoffice\TagManagerTree\TagManager.css" target=".\App_Plugins\TagManager\backoffice\TagManagerTree\TagManager.css" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\Dashboard.html" target=".\App_Plugins\TagManager\Dashboard.html" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\lang\en-GB.xml" target=".\App_Plugins\TagManager\lang\en-GB.xml" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\lang\en-US.xml" target=".\App_Plugins\TagManager\lang\en-US.xml" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\lang\en.xml" target=".\App_Plugins\TagManager\lang\en.xml" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\lang\nl-NL.xml" target=".\App_Plugins\TagManager\lang\nl-NL.xml" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\package.manifest" target=".\App_Plugins\TagManager\package.manifest" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\App_Plugins\TagManager\TagManager.resource.js" target=".\App_Plugins\TagManager\TagManager.resource.js" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\readme.md" target="\readme.md" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\buildTransitive\TagManager.targets" target="buildTransitive\TagManager.targets" />
+    <file src="C:\Users\bisha\OneDrive\Desktop\work\Tag20Manager20Package20Umbraco\TagManager\readme.txt" target="\readme.txt" />
+  </files>
+</package>

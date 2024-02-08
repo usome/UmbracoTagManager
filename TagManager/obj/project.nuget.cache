@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jkpyPPvdbNi8spS2fw8NU+O3TL5MLYM6hihAtrS0XlZrtwSCPa+W7yli+TYvRdC8TEu/pbcOXrNSvp6yrmMdog==",
+  "dgSpecHash": "zb24xa8z/UK8Fp7/iAhvUXBXAZhEo6yzWh8ELmq5OTJvT1hiHUuDkOyBgA3Y+yep80P83amkRZAOS3IiMGGGfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\tagmanager\\UmbracoTagManager\\TagManager\\TagManager.csproj",
+  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\work\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.abstractions\\7.0.0\\asp.versioning.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.http\\7.0.0\\asp.versioning.http.7.0.0.nupkg.sha512",
