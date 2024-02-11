@@ -1,0 +1,47 @@
+<div ng-controller="TagManager.TagDisplayController" ng-class="getSelectedTagsContainerClass()">
+    <umb-box-header title="Tag Manager"></umb-box-header>
+
+    <div class="create-button">
+        <button ng-click="navigateToCreateTag()">Create Tag</button>
+    </div>
+
+    <!-- Updated the delete button to use uui-dialog -->
+    <div class="delete-button-container" ng-show="selectedTags.length > 0">
+        <button class="clear-section" ng-click="clearSelection()">
+            Clear Selection
+        </button>
+        <span class="selected-count">
+            {{ selectedTags.length }} of {{ tags.length }} selected
+        </span>
+        <uui-dialog ng-show="showConfirmationDialog">
+            <uui-dialog-layout headline="Delete">
+                <p>
+                    Are you sure you want to delete
+                    <b>
+                        {{ selectedTags.length }} tag{{ selectedTags.length > 1 ? 's' : '' }}?
+                    </b>
+                </p>
+                <uui-button slot="actions" ng-click="cancelDelete()">Cancel</uui-button>
+                <uui-button slot="actions" look="primary" color="danger" ng-click="confirmDelete()">Yes, delete</uui-button>
+            </uui-dialog-layout>
+        </uui-dialog>
+        <button class="delete-button" ng-click="showConfirmation()">
+            <i class="icon-trash"></i>Delete
+        </button>
+    </div>
+    <!-- Add some margin or padding to move the search bar down -->
+    <div class="icon-search search-container">
+        <input type="text" placeholder="Type to search..." ng-model="searchQuery">
+    </div>
+
+
+    <div class="card-container">
+        <umb-box ng-repeat="tag in tags | filter: filterTags" class="icon-tag" ng-class="{ 'selected': tag.selected }" ng-click="toggleSelectTag(tag)">
+            <umb-box-content>
+                <a ng-click="navigateToEditTag(tag.id)">
+                    <span>{{ tag.name }}</span>
+                </a>
+            </umb-box-content>
+        </umb-box>
+    </div>
+</div>
