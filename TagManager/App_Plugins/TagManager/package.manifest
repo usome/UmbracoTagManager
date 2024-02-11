@@ -12,5 +12,6 @@
   ],
   "css": [
     "~/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.css"
-  ]
+  ],
+ "bundleOptions": "None"
 }
