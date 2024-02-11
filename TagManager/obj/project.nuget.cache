@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+lYa2z2SxXIxBZC8EXpIPWmIM7yMcwEe+D/KBF067Ro1SaaoLve5+zhuPs2Ap828Ftm5QSIehhDS11ZytDSz4Q==",
+  "dgSpecHash": "Rx8jakj+tEG9GdQS2MTEuEhJ0cDSjBAORtGU4npu0ccZC/QJMYzu2hb1CdFNo7qfWjdZR+GEZBQzyagbAQLWIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\Tag%20Manager%20Package%20Umbraco\\TagManager\\TagManager.csproj",
+  "projectFilePath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\UmbracoTagManager\\TagManager\\TagManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.abstractions\\7.0.0\\asp.versioning.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\asp.versioning.http\\7.0.0\\asp.versioning.http.7.0.0.nupkg.sha512",
@@ -91,6 +91,8 @@
     "C:\\Users\\bisha\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\npoco\\5.7.1\\npoco.5.7.1.nupkg.sha512",
+    "C:\\Users\\bisha\\.nuget\\packages\\nuget.build\\2.12.1\\nuget.build.2.12.1.nupkg.sha512",
+    "C:\\Users\\bisha\\.nuget\\packages\\nuget.commandline\\4.9.3\\nuget.commandline.4.9.3.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\nuglify\\1.20.2\\nuglify.1.20.2.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\openiddict.abstractions\\4.5.0\\openiddict.abstractions.4.5.0.nupkg.sha512",
     "C:\\Users\\bisha\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

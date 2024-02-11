@@ -1586,6 +1586,15 @@
           "lib/netstandard2.1/NPoco.dll": {}
         }
       },
+      "NuGet.Build/2.12.1": {
+        "type": "package",
+        "dependencies": {
+          "NuGet.CommandLine": "4.9.3"
+        }
+      },
+      "NuGet.CommandLine/4.9.3": {
+        "type": "package"
+      },
       "NUglify/1.20.2": {
         "type": "package",
         "compile": {
@@ -6076,6 +6085,32 @@
         "lib/netstandard2.1/NPoco.dll",
         "npoco.5.7.1.nupkg.sha512",
         "npoco.nuspec"
+      ]
+    },
+    "NuGet.Build/2.12.1": {
+      "sha512": "8kFy8VUxa3WyvmquWxmwvyttbj3vzV4/t3eqYcQlPiP9xwNe8+SEwJNtpTG9SyP9Iyp9fvQNLyJ1w+71Egfuag==",
+      "type": "package",
+      "path": "nuget.build/2.12.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "nuget.build.2.12.1.nupkg.sha512",
+        "nuget.build.nuspec",
+        "tools/NuGet.targets"
+      ]
+    },
+    "NuGet.CommandLine/4.9.3": {
+      "sha512": "+jPG422sbV/3gULQuHAUkmVZmFpC1+GUrK6VlOlY7anN02xilmFREzKvH3ra9KzvfFiib3jRwyGK/xVKpyEKkQ==",
+      "type": "package",
+      "path": "nuget.commandline/4.9.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "nuget.commandline.4.9.3.nupkg.sha512",
+        "nuget.commandline.nuspec",
+        "tools/NuGet.exe"
       ]
     },
     "NUglify/1.20.2": {
@@ -11125,6 +11160,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "NuGet.Build >= 2.12.1",
       "Umbraco.Cms.Web.BackOffice >= 12.3.0",
       "Umbraco.Cms.Web.Website >= 12.3.0"
     ]
@@ -11133,13 +11169,13 @@
     "C:\\Users\\bisha\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\Tag%20Manager%20Package%20Umbraco\\TagManager\\TagManager.csproj",
+      "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\UmbracoTagManager\\TagManager\\TagManager.csproj",
       "projectName": "TagManager",
-      "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\Tag%20Manager%20Package%20Umbraco\\TagManager\\TagManager.csproj",
+      "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\UmbracoTagManager\\TagManager\\TagManager.csproj",
       "packagesPath": "C:\\Users\\bisha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\Tag%20Manager%20Package%20Umbraco\\TagManager\\obj\\",
+      "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Github\\UmbracoTagManager\\TagManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11169,6 +11205,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "NuGet.Build": {
+            "target": "Package",
+            "version": "[2.12.1, )"
+          },
           "Umbraco.Cms.Web.BackOffice": {
             "target": "Package",
             "version": "[12.3.0, )"
