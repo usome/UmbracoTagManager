@@ -1,0 +1,27 @@
+<div ng-controller="TagManager.TagManagerCreateController">
+
+    <umb-editor-view>
+        <umb-editor-container class="form-horizontal">
+            <umb-box>
+                <div class="umb-group-panel__header">
+                    <div class="float-left w-100 left">
+                        Create Tag
+                    </div>
+                </div>
+                <umb-box-content>
+                    <umb-control-group label="Tag Name">
+                        <input type="text" class="umb-textstring umb-property-editor" ng-model="cmsTags.tag" />
+                        <input type="hidden" ng-model="cmsTags.group" />
+
+                    </umb-control-group>
+                </umb-box-content>
+            </umb-box>
+        </umb-editor-container>
+        <umb-editor-footer>
+            <umb-editor-footer-content-right>
+                <a href="#" class="btn btn-primary" ng-click="save(cmsTags)" prevent-default>Create</a>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+    </umb-editor-view>
+
+</div>
