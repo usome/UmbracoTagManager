@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ContentTargetFolders>.</ContentTargetFolders>
 		<Product>TagManager</Product>
 		<PackageId>TagManager</PackageId>
@@ -10,7 +10,7 @@
 
 		</Description>
 		<PackageTags>umbraco plugin package,umbraco-marketplace</PackageTags>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 
 	</PropertyGroup>
 	<PropertyGroup>
@@ -21,17 +21,22 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="NuGet.Build" Version="2.12.1" />
-		<PackageReference Include="Umbraco.Cms.Web.Website" Version="12.3.0" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="12.3.0" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="13.1.1" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.1.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="App_Plugins\TagManager\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
 		<None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Include="..\icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="App_Plugins\TagManager\package.manifest" />
 	</ItemGroup>
 	<!-- package files -->

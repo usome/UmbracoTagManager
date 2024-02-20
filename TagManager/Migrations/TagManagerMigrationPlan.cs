@@ -1,19 +1,22 @@
 ﻿using System;
+using Our.Umbraco.TagManager.Migrations;
 using Umbraco.Cms.Core.Packaging;
 
-namespace TagManager.Migrations
+namespace MediaWiz.Forums.Migrations
 {
-    public class TagManagerMigrationPlan : PackageMigrationPlan
+    public class UsomePackageMigrationPlan : PackageMigrationPlan
     {
-        public TagManagerMigrationPlan() : base("TagManager")
+        public UsomePackageMigrationPlan()
+            : base("Umbraco TagManager")
         {
         }
 
         protected override void DefinePlan()
         {
-            // Use a unique GUID for each migration step
-            To<TagManagerMigration>(new Guid("12345678-1234-5678-1234-567812345678"));
-            // Add more migration steps as needed
+
+            From(String.Empty)
+                .To<TagManagerMigrationHelper>("UsomeTagManagerMigrationv1-db"); ;
+
         }
     }
 }

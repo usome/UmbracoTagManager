@@ -33,8 +33,9 @@
   },
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "TagManager/1.0.0": {
+      "TagManager/1.0.2": {
         "dependencies": {
+          "NuGet.Build": "2.12.1",
           "Umbraco.Cms.Web.BackOffice": "12.3.0",
           "Umbraco.Cms.Web.Website": "12.3.0",
           "Microsoft.AspNetCore.Antiforgery": "7.0.0.0",
@@ -1416,6 +1417,12 @@
           "lib/netstandard2.1/NPoco.dll": {}
         }
       },
+      "NuGet.Build/2.12.1": {
+        "dependencies": {
+          "NuGet.CommandLine": "4.9.3"
+        }
+      },
+      "NuGet.CommandLine/4.9.3": {},
       "NUglify/1.20.2": {
         "runtime": {
           "lib/net5.0/NUglify.dll": {
@@ -4532,7 +4539,7 @@
     }
   },
   "libraries": {
-    "TagManager/1.0.0": {
+    "TagManager/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -5145,6 +5152,20 @@
       "sha512": "sha512-6qjyBqqc0TSK/xHjXA6tSZhABSDQqXGrTOIdUIVazPsmN0OyTaBTEtwV2wTV0NyfkzcRPhLyO6bIW89ZFNvlWg==",
       "path": "npoco/5.7.1",
       "hashPath": "npoco.5.7.1.nupkg.sha512"
+    },
+    "NuGet.Build/2.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8kFy8VUxa3WyvmquWxmwvyttbj3vzV4/t3eqYcQlPiP9xwNe8+SEwJNtpTG9SyP9Iyp9fvQNLyJ1w+71Egfuag==",
+      "path": "nuget.build/2.12.1",
+      "hashPath": "nuget.build.2.12.1.nupkg.sha512"
+    },
+    "NuGet.CommandLine/4.9.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+jPG422sbV/3gULQuHAUkmVZmFpC1+GUrK6VlOlY7anN02xilmFREzKvH3ra9KzvfFiib3jRwyGK/xVKpyEKkQ==",
+      "path": "nuget.commandline/4.9.3",
+      "hashPath": "nuget.commandline.4.9.3.nupkg.sha512"
     },
     "NUglify/1.20.2": {
       "type": "package",
