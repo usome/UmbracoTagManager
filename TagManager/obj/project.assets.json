@@ -11423,13 +11423,13 @@
     "C:\\Users\\bisha\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.3",
+    "version": "1.0.4",
     "restore": {
-      "projectUniqueName": "D:\\UmbracoTagManager\\TagManager\\TagManager.csproj",
+      "projectUniqueName": "C:\\Users\\bisha\\OneDrive\\Desktop\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
       "projectName": "TagManager",
-      "projectPath": "D:\\UmbracoTagManager\\TagManager\\TagManager.csproj",
+      "projectPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Tag20Manager20Package20Umbraco\\TagManager\\TagManager.csproj",
       "packagesPath": "C:\\Users\\bisha\\.nuget\\packages\\",
-      "outputPath": "D:\\UmbracoTagManager\\TagManager\\obj\\",
+      "outputPath": "C:\\Users\\bisha\\OneDrive\\Desktop\\Tag20Manager20Package20Umbraco\\TagManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bisha\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -34,7 +34,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "TagManager/1.0.3": {
+      "TagManager/1.0.4": {
         "dependencies": {
           "NuGet.Build": "2.12.1",
           "Umbraco.Cms.Web.BackOffice": "13.1.1",
@@ -4481,7 +4481,7 @@
     }
   },
   "libraries": {
-    "TagManager/1.0.3": {
+    "TagManager/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

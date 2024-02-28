@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Trees;
-using Umbraco.Cms.Core.Scoping;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Trees;
+using Umbraco.Cms.Infrastructure.Scoping;
 using Umbraco.Cms.Web.BackOffice.Trees;
 using Umbraco.Cms.Web.Common.Attributes;
-using System;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
+using Umbraco.Extensions;
 
 namespace Umbraco_Tag_Manager.Controllers
 {
@@ -17,30 +18,24 @@ namespace Umbraco_Tag_Manager.Controllers
     [Tree(ConstantValues.SectionAlias, ConstantValues.TreeAlias, TreeGroup = ConstantValues.TreeGroup)]
     public class TagManagerTreeController : TreeController
     {
-        private readonly IMenuItemCollectionFactory _menuItemCollectionFactory;
         private readonly TagManagerApiController _tManagerController;
+        private readonly IMenuItemCollectionFactory _menuItemCollectionFactory;
 
-        public TagManagerTreeController(
-            ILocalizedTextService localizedTextService,
+        public TagManagerTreeController(ILocalizedTextService localizedTextService,
             UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection,
-            IMenuItemCollectionFactory menuItemCollectionFactory,
             IEventAggregator eventAggregator,
             IScopeProvider scopeProvider,
+            IContentService contentService,
             ILogger<TagManagerApiController> logger,
             IMediaService mediaService,
-            IContentService contentService,
-            ITagService tagService)
-            : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
+            ITagService tagService,
+            IDataTypeService dataTypeService,
+            IMenuItemCollectionFactory menuItemCollectionFactory
+            ) : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
         {
+            _tManagerController = new TagManagerApiController(scopeProvider, contentService, logger, mediaService, tagService);
             _menuItemCollectionFactory = menuItemCollectionFactory ?? throw new ArgumentNullException(nameof(menuItemCollectionFactory));
-            _tManagerController = new TagManagerApiController(
-                scopeProvider,
-                logger,
-                mediaService,
-                contentService,
-                tagService);
         }
-
         protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)
         {
             var tree = new TreeNodeCollection();
@@ -59,8 +54,6 @@ namespace Umbraco_Tag_Manager.Controllers
 
             return tree;
         }
-
-
 
 
         protected override ActionResult<MenuItemCollection> GetMenuForNode(string id, FormCollection queryStrings)
@@ -89,7 +82,7 @@ namespace Umbraco_Tag_Manager.Controllers
         [HttpPost]
         public ActionResult<bool> PostMethod()
         {
-            return true; 
+            return true;
         }
 
     }
