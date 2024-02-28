@@ -30,11 +30,11 @@ The tree is split into separate branches for each tag group created, which is us
 
 ## Screenshots
 
-![Dashboard](https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20001957.png)
+![Dashboard](https://raw.githubusercontent.com/usome/UmbracoTagManager/master/dashboard.png)
 *Dashboard*
 
-![Overview](https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20002044.png)
+![overview](https://raw.githubusercontent.com/usome/UmbracoTagManager/master/overview.png)
 *Overview*
 
-![Detailed View](https://raw.githubusercontent.com/BishalTimalsina12/Images/main/Screenshot%202024-01-09%20002225.png)
-*Detailed View*
+![Dashboard](https://raw.githubusercontent.com/usome/UmbracoTagManager/master/editor.png)
+*editor View*
