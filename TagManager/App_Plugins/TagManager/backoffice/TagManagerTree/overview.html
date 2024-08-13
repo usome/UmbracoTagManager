@@ -1,9 +1,19 @@
 <div ng-controller="TagManager.TagDisplayController" ng-class="getSelectedTagsContainerClass()">
     <umb-box-header title="Tag Manager"></umb-box-header>
 
-    <div class="create-button">
-        <button ng-click="navigateToCreateTag()">Create Tag</button>
-    </div>
+    <umb-editor-sub-header>
+        <umb-editor-sub-header-content-left>
+            <div class="create-button">
+                <button ng-click="navigateToCreateTag()">Create Tag</button>
+            </div>
+        </umb-editor-sub-header-content-left>
+        <umb-editor-sub-header-content-right>
+            <umb-search-filter model="searchQuery"
+                               label-key="placeholders_filter"
+                               text="Type to filter...">
+            </umb-search-filter>
+        </umb-editor-sub-header-content-right>
+    </umb-editor-sub-header>
 
     <!-- Updated the delete button to use uui-dialog -->
     <div class="delete-button-container" ng-show="selectedTags.length > 0">
@@ -29,11 +39,6 @@
             <i class="icon-trash"></i>Delete
         </button>
     </div>
-    <!-- Add some margin or padding to move the search bar down -->
-    <div class="icon-search search-container">
-        <input type="text" placeholder="Type to search..." ng-model="searchQuery">
-    </div>
-
 
     <div class="card-container">
         <umb-box ng-repeat="tag in tags | filter: filterTags" class="icon-tag" ng-class="{ 'selected': tag.selected }" ng-click="toggleSelectTag(tag)">

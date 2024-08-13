@@ -29,22 +29,6 @@
         transition: background-color 0.3s ease;
     }
 
-.icon-search {
-    position: absolute;
-    color: #1b264f;
-    top: 0;
-    right: 0;
-    margin: 20px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
-}
-
-
-    .icon-search.active input {
-        width: 200px;
-        transition: background-color 0.3s ease;
-        color: #1b264f;
-    }
 
 
 .icon-tag {
@@ -141,16 +125,4 @@ uui-dialog {
     top: 50%;
     left: 60%;
     transform: translate(-50%, -50%);
-}
-.search-container {
-    margin-top: 63px !important;
-}
-
-.icon-search input {
-    border: 1px solid #3544b1; /* Set the initial border color */
-}
-
-.icon-search {
-    font-size: 19px; /* Set the desired size for the search icon */
-    color: black; /* Set the color to black */
 }
