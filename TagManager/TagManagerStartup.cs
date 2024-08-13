@@ -1,9 +1,11 @@
 ﻿using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Composing;
-using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Core.Migrations;
 using Umbraco.Cms.Core.Scoping;
+using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Core.Services;
+using System.Collections.Generic;
+using Umbraco.Cms.Core.Composing;
+using Umbraco.Cms.Core.Migrations;
+using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Migrations.Upgrade;
 
@@ -13,7 +15,40 @@ namespace Umbraco_Tag_Manager
     {
         public void Compose(IUmbracoBuilder builder)
         {
+            builder.ManifestFilters().Append<TagManagerManifestFilter>();
             builder.Sections().Append<TagManagerSection>();
+        }
+    }
+
+    public class TagManagerManifestFilter : IManifestFilter
+    {
+        public void Filter(List<PackageManifest> manifests)
+        {
+            manifests.Add(new PackageManifest
+            {
+                PackageName = "TagManager",
+                Dashboards = new ManifestDashboard[]
+                {
+                    new ManifestDashboard()
+                    {
+                        Alias = "tagManager",
+                        View = "/App_Plugins/TagManager/Dashboard.html",
+                        Sections = new string[]
+                        {
+                            "TagManager"
+                        }
+                    }
+                 },
+                Scripts = new[]
+                {
+                    "/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.controller.js",
+                    "/App_Plugins/TagManager/TagManager.resource.js"
+                 },
+                Stylesheets = new[]
+                {
+                    "/App_Plugins/TagManager/backoffice/TagManagerTree/TagManager.css"
+                }
+            });
         }
     }
 
@@ -29,7 +64,7 @@ namespace Umbraco_Tag_Manager
         private readonly IKeyValueService _keyValueService;
         private readonly IRuntimeState _runtimeState;
 
-    public TagManagerStartup(ICoreScopeProvider coreScopeProvider, IMigrationPlanExecutor migrationPlanExecutor, IKeyValueService keyValueService, IRuntimeState runtimeState)
+        public TagManagerStartup(ICoreScopeProvider coreScopeProvider, IMigrationPlanExecutor migrationPlanExecutor, IKeyValueService keyValueService, IRuntimeState runtimeState)
         {
             _coreScopeProvider = coreScopeProvider;
             _migrationPlanExecutor = migrationPlanExecutor;

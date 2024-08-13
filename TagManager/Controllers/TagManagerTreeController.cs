@@ -1,16 +1,16 @@
 ﻿using System;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core;
-using Umbraco.Cms.Core.Models.Trees;
-using Umbraco.Cms.Core.Services;
+using Umbraco.Extensions;
 using Umbraco.Cms.Core.Trees;
-using Umbraco.Cms.Infrastructure.Scoping;
+using Umbraco.Cms.Core.Events;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Umbraco.Cms.Core.Services;
+using Microsoft.Extensions.Logging;
+using Umbraco.Cms.Core.Models.Trees;
 using Umbraco.Cms.Web.BackOffice.Trees;
 using Umbraco.Cms.Web.Common.Attributes;
-using Umbraco.Extensions;
+using Umbraco.Cms.Infrastructure.Scoping;
 
 namespace Umbraco_Tag_Manager.Controllers
 {
@@ -33,7 +33,7 @@ namespace Umbraco_Tag_Manager.Controllers
             IMenuItemCollectionFactory menuItemCollectionFactory
             ) : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
         {
-            _tManagerController = new TagManagerApiController(scopeProvider, contentService, logger, mediaService, tagService);
+            _tManagerController = new TagManagerApiController(scopeProvider, contentService, logger, tagService);
             _menuItemCollectionFactory = menuItemCollectionFactory ?? throw new ArgumentNullException(nameof(menuItemCollectionFactory));
         }
         protected override ActionResult<TreeNodeCollection> GetTreeNodes(string id, FormCollection queryStrings)

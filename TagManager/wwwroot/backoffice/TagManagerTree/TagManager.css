@@ -1,8 +1,3 @@
-.umb-box-header {
-    width: 100%;
-    margin-bottom: 25px;
-}
-
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(33.333% - 10px), 1fr));

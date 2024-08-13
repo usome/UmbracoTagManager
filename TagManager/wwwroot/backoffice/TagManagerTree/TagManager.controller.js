@@ -85,10 +85,10 @@
 
 //display block
 
-angular.module("umbraco").controller("TagManager.TagDisplayController", function ($scope, TagManagerResource, $routeParams, $location, $route, $timeout, notificationsService) {
+angular.module("umbraco").controller("TagManager.TagDisplayController", function ($scope, TagManagerResource, $routeParams, $location, $route, notificationsService) {
     // Initialize an array to hold selected tags
     $scope.selectedTags = [];
-
+    console.log($scope)
     // Fetch tags for a specific group from the server
     TagManagerResource.getAllTagsInGroup($routeParams.id).then(function (response) {
         $scope.cmsTags = response.data;
@@ -107,6 +107,7 @@ angular.module("umbraco").controller("TagManager.TagDisplayController", function
 
             return {
                 id: tagId,
+                filterName: `${tagName}`,
                 name: `${tagName} (${tagCount})`,
                 selected: false, // Add a selected property
             };
@@ -129,10 +130,6 @@ angular.module("umbraco").controller("TagManager.TagDisplayController", function
         }
     };
 
-    // Function to filter tags based on the search query
-    $scope.filterTags = function (tag) {
-        return !$scope.searchQuery || tag.name.toLowerCase().includes($scope.searchQuery.toLowerCase());
-    };
 
     // Function to navigate to the create tag view
     $scope.navigateToCreateTag = function () {
