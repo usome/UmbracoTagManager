@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\Dashboard.html",
+      "PackagePath": "staticwebassets\\Dashboard.html"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\TagManager.resource.js",
+      "PackagePath": "staticwebassets\\TagManager.resource.js"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\TagManager.controller.js",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\TagManager.controller.js"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\TagManager.css",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\TagManager.css"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\create.html",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\create.html"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\delete.html",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\delete.html"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\edit.html",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\edit.html"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\backoffice\\TagManagerTree\\overview.html",
+      "PackagePath": "staticwebassets\\backoffice\\TagManagerTree\\overview.html"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\lang\\en-GB.xml",
+      "PackagePath": "staticwebassets\\lang\\en-GB.xml"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\lang\\en-US.xml",
+      "PackagePath": "staticwebassets\\lang\\en-US.xml"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\lang\\en.xml",
+      "PackagePath": "staticwebassets\\lang\\en.xml"
+    },
+    {
+      "Id": "C:\\Users\\lithv\\Desktop\\UmbracoTagManager\\TagManager\\wwwroot\\lang\\nl-NL.xml",
+      "PackagePath": "staticwebassets\\lang\\nl-NL.xml"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TagManager.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TagManager.props",
+      "PackagePath": "build\\TagManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TagManager.props",
+      "PackagePath": "buildMultiTargeting\\TagManager.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TagManager.props",
+      "PackagePath": "buildTransitive\\TagManager.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
